@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        li{
+        display: block;
+    }
+    </style>
 </head>
+
 <body>
+    <section>
+        <div class="lists to-do">
+            <form action="">
+                <h1>Zadania do zrobienia</h1>
+                <input type="text">
+                <button>+</button>
+            </form>
+            <h2>Do zrobienia</h2>
+            <ul id="todoUl"></ul>
+        </div>
+        <div class="lists done">
+                <h2>Wykonane</h2>
+            <ul id="doneUl"></ul>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
+
 </html>
