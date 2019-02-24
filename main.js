@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const input = document.querySelector('input');
 const btn = document.querySelector('button');
 const ul = document.querySelector('ul');
-
+const doneUl = document.querySelector('doneUl');
 
 
 
@@ -29,14 +29,23 @@ const create = (e) => {
 
     check.addEventListener('click', () => {
         check.classList.toggle("checked");
+        span.classList.toggle("checked");
         check.classList.contains("checked") ? span.style.textDecoration = "line-through" : span.style.textDecoration = "none";
-
+        done();
     })
-    done()
+    // done();
 }
 
 const done = () => {
-
+    console.log("dupa");
+    if (document.querySelector("span").classList.contains("checked")) {
+        // document.querySelector();
+        // debugger;
+        let doneulll = document.getElementById("doneUl");
+        debugger;
+        const doneli = document.createElement("li");
+        doneulll.appendChild(doneli);
+    }
 
 }
 
