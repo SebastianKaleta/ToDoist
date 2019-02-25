@@ -11,12 +11,14 @@ $color-heading:#24b400;
     box-sizing: border-box;
 }
 
-h1{
+h1 {
     font-size: 30px;
-    
+
 }
+
 h1,
-h2 {margin-bottom: 30px;
+h2 {
+    margin-bottom: 30px;
     text-align: center;
     color: $color-heading;
 }
@@ -70,14 +72,16 @@ input {
     position: relative;
     background-color: $lists-color;
     list-style-type: none;
-    padding: $space-inside-div;
+    padding: 10px 50px 10px 10px;
     border-radius: $radius;
     margin: 5px;
     color: rgb(238, 238, 238);
     overflow: hidden;
+    // hyphens: auto;
 }
 
-.btn-delete {
+.btn-delete,
+.btn-add-second {
     position: absolute;
     top: 50%;
     right: 0;
@@ -92,9 +96,18 @@ input {
     font-weight: bold;
 }
 
+.btn-add-second {
+    right: 25px;
+}
 
 
 .searchInput {
     display: inline-block;
     right: 20px;
+}
+
+.far,
+.fas {
+    margin: 2px;
+    font-size: 20px;
 }

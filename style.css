@@ -59,14 +59,15 @@ input {
   position: relative;
   background-color: #6fcc58;
   list-style-type: none;
-  padding: 10px;
+  padding: 10px 50px 10px 10px;
   border-radius: 5px;
   margin: 5px;
   color: #eeeeee;
   overflow: hidden;
 }
 
-.btn-delete {
+.btn-delete,
+.btn-add-second {
   position: absolute;
   top: 50%;
   right: 0;
@@ -81,7 +82,17 @@ input {
   font-weight: bold;
 }
 
+.btn-add-second {
+  right: 25px;
+}
+
 .searchInput {
   display: inline-block;
   right: 20px;
+}
+
+.far,
+.fas {
+  margin: 2px;
+  font-size: 20px;
 }

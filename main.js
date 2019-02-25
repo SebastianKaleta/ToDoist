@@ -27,6 +27,11 @@ const removeTask = (e) => {
     renderList();
 }
 
+const addNewTasks=()=>{
+
+
+}
+
 const addTask = (e) => {
     e.preventDefault();
     const titleTask = input.value;
@@ -34,13 +39,14 @@ const addTask = (e) => {
 
     const task = document.createElement('li');
     task.className = "taskList";
-    task.innerHTML = titleTask + '<button class="btn-delete"> Usuń</button>';
+    task.innerHTML = titleTask + '<button class="btn-add-second"><i class="fas fa-plus"></i> </button>'+'<button class="btn-delete"> <i class="far fa-trash-alt"></i></button>';
     toDoList.push(task); //send task to array
     renderList();
     ul.appendChild(task);
     input.value = "";
     numberTask.textContent = listItems.length;
-    task.querySelector('button').addEventListener('click', removeTask)
+    task.querySelector('button:nth-child(2)').addEventListener('click', removeTask)
+    // task.querySelector('button:nth-child(1)').addEventListener('click', addNewTasks)
 }
 
 const renderList = () => {
