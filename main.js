@@ -1,54 +1,61 @@
+const toDoList = [];
+
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const btn = document.querySelector('button');
 const ul = document.querySelector('ul');
-const doneUl = document.querySelector('doneUl');
+const listItems = document.getElementsByClassName('taskList');
+const numberTask = document.querySelector('h2 span');
+const searchInput = document.getElementById("searchInput")
 
 
+const searchTask = (e) => {
+    const searchText = e.target.value.toLowerCase();
+    let tasks = toDoList;
+    tasks = tasks.filter(li =>
+        li.textContent.toLowerCase().includes(searchText));
+    ul.textContent = "";
+    tasks.forEach(li => ul.appendChild(li))
 
-const create = (e) => {
+
+}
+
+const removeTask = (e) => {
+    const index = e.target.parentNode.dataset.key;
+    toDoList.splice(index, 1); //clean delete piece array
+    numberTask.textContent = toDoList.length;
+    renderList();
+}
+
+const addNewTasks=()=>{
+
+
+}
+
+const addTask = (e) => {
     e.preventDefault();
-    const text = input.value;
-    const li = document.createElement("li");
-    const check = document.createElement("input");
-    const span = document.createElement("span");
+    const titleTask = input.value;
+    if (titleTask === "") return; //block add empty task
 
-    if (input.value !== "") {
+    const task = document.createElement('li');
+    task.className = "taskList";
+    task.innerHTML = titleTask + '<button class="btn-add-second"><i class="fas fa-plus"></i> </button>'+'<button class="btn-delete"> <i class="far fa-trash-alt"></i></button>';
+    toDoList.push(task); //send task to array
+    renderList();
+    ul.appendChild(task);
+    input.value = "";
+    numberTask.textContent = listItems.length;
+    task.querySelector('button:nth-child(2)').addEventListener('click', removeTask)
+    // task.querySelector('button:nth-child(1)').addEventListener('click', addNewTasks)
+}
 
-        check.type = "checkbox";
-
-        ul.appendChild(li);
-        li.appendChild(check);
-        li.appendChild(span);
-        span.textContent = text;
-        li.insertBefore(check, span)
-        input.value = "";
-    } else {
-        alert("Nie można dodać pustego zadania!");
-    }
-
-    check.addEventListener('click', () => {
-        check.classList.toggle("checked");
-        span.classList.toggle("checked");
-        check.classList.contains("checked") ? span.style.textDecoration = "line-through" : span.style.textDecoration = "none";
-        done();
+const renderList = () => {
+    ul.textContent = "";
+    toDoList.forEach((toDoElement, key) => {
+        toDoElement.dataset.key = key;
+        ul.appendChild(toDoElement);
     })
-    // done();
-}
-
-const done = () => {
-    console.log("dupa");
-    if (document.querySelector("span").classList.contains("checked")) {
-        // document.querySelector();
-        // debugger;
-        let doneulll = document.getElementById("doneUl");
-        debugger;
-        const doneli = document.createElement("li");
-        doneulll.appendChild(doneli);
-    }
 
 }
-
-
-
-form.addEventListener('submit', create)
+form.addEventListener('submit', addTask)
+searchInput.addEventListener('input', searchTask)
