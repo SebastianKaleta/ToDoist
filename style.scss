@@ -5,22 +5,29 @@ $radius:5px;
 $radius-input:15px;
 $color-heading:#24b400;
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+h1{
+    font-size: 30px;
+    
+}
+h1,
+h2 {margin-bottom: 30px;
+    text-align: center;
+    color: $color-heading;
+}
 
 .lists {
-   position: absolute;
+    position: absolute;
     width: 50%;
     background-color: $task-primary-color;
     padding: 20px;
     border-radius: $radius;
     box-shadow: 0 0 5px #777;
-    height: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -44,7 +51,7 @@ $color-heading:#24b400;
     font-size: 18px;
     text-transform: uppercase;
     color: $color-heading;
-cursor: pointer;
+    cursor: pointer;
 
 }
 
@@ -53,27 +60,39 @@ cursor: pointer;
 input {
     height: 30px;
     width: 100%;
+    padding: 10px;
     border-radius: $radius-input;
     border: 1px solid $color-heading;
 }
 
-.to-do-ul {
-    padding: 0;
-}
 
 .taskList {
+    position: relative;
     background-color: $lists-color;
     list-style-type: none;
     padding: $space-inside-div;
     border-radius: $radius;
-
+    margin: 5px;
+    color: rgb(238, 238, 238);
+    overflow: hidden;
 }
 
-h1,
-h2 {
-    text-align: center;
+.btn-delete {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-20%, -50%);
+    padding: 5px 0;
+    background-color: transparent;
+    border-style: none;
+    font-size: 16px;
+    text-transform: uppercase;
     color: $color-heading;
+    cursor: pointer;
+    font-weight: bold;
 }
+
+
 
 .searchInput {
     display: inline-block;

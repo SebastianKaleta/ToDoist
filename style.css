@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 30px;
+}
+
+h1,
+h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #24b400;
+}
+
 .lists {
   position: absolute;
   width: 50%;
@@ -11,7 +22,6 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 5px #777;
-  height: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -40,25 +50,35 @@
 input {
   height: 30px;
   width: 100%;
+  padding: 10px;
   border-radius: 15px;
   border: 1px solid #24b400;
 }
 
-.to-do-ul {
-  padding: 0;
-}
-
 .taskList {
+  position: relative;
   background-color: #6fcc58;
   list-style-type: none;
   padding: 10px;
   border-radius: 5px;
+  margin: 5px;
+  color: #eeeeee;
+  overflow: hidden;
 }
 
-h1,
-h2 {
-  text-align: center;
+.btn-delete {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-20%, -50%);
+  padding: 5px 0;
+  background-color: transparent;
+  border-style: none;
+  font-size: 16px;
+  text-transform: uppercase;
   color: #24b400;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .searchInput {

@@ -16,12 +16,8 @@ const searchTask = (e) => {
         li.textContent.toLowerCase().includes(searchText));
     ul.textContent = "";
     tasks.forEach(li => ul.appendChild(li))
-    if (searchInput !== "") {
-        tasks.forEach(li => li.style.backgroundColor = "red")
 
-    } else {
-        tasks.forEach(li => li.style.backgroundColor = "transparent");
-    }
+
 }
 
 const removeTask = (e) => {
@@ -38,7 +34,7 @@ const addTask = (e) => {
 
     const task = document.createElement('li');
     task.className = "taskList";
-    task.innerHTML = titleTask + "<button> Usuń</button>";
+    task.innerHTML = titleTask + '<button class="btn-delete"> Usuń</button>';
     toDoList.push(task); //send task to array
     renderList();
     ul.appendChild(task);
