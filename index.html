@@ -5,28 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        li{
-        display: block;
-    }
-    </style>
 </head>
 
 <body>
     <section>
         <div class="lists to-do">
-            <form action="">
-                <h1>Zadania do zrobienia</h1>
-                <input type="text">
-                <button>+</button>
+            <form action="" class="form-todo">
+                <h1>ToDOList</h1>
+                <input type="text" placeholder="Dodaj zadanie">
+                <button class="btn-task">Dodaj zadanie</button>
+                <input type="text" id="searchInput" placeholder="Wyszukaj zadanie">
             </form>
-            <h2>Do zrobienia</h2>
-            <ul id="todoUl"></ul>
-        </div>
-        <div class="lists done">
-                <h2>Wykonane</h2>
-            <ul id="doneUl"></ul>
+            <h2>Do zrobienia(<span>0</span>)</h2>
+            <ul id="todoUl" class="to-do-ul"></ul>
         </div>
     </section>
     <script src="main.js"></script>
