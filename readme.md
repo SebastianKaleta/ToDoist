@@ -6,7 +6,7 @@
 
 ## Created in:
  - HTML5,
- - CSS with Sass
+ - CSS3 with Sass
  - JavaScript(ES6)
 
  ### In future:
