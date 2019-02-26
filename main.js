@@ -27,7 +27,7 @@ const removeTask = (e) => {
     renderList();
 }
 
-const addNewTasks=()=>{
+const addNewTasks = () => {
 
 
 }
@@ -38,15 +38,21 @@ const addTask = (e) => {
     if (titleTask === "") return; //block add empty task
 
     const task = document.createElement('li');
-    task.className = "taskList";
-    task.innerHTML = titleTask + '<button class="btn-add-second"><i class="fas fa-plus"></i> </button>'+'<button class="btn-delete"> <i class="far fa-trash-alt"></i></button>';
+    task.className = "task";
+    const btnDelete = document.createElement("button");
+    btnDelete.classList.add('btn-delete')
+    btnDelete.innerHTML = '<i class="far fa-trash-alt"></i>';
+    task.innerHTML = titleTask;
+    task.appendChild(btnDelete);
+
+    
     toDoList.push(task); //send task to array
     renderList();
     ul.appendChild(task);
     input.value = "";
     numberTask.textContent = listItems.length;
-    task.querySelector('button:nth-child(2)').addEventListener('click', removeTask)
-    // task.querySelector('button:nth-child(1)').addEventListener('click', addNewTasks)
+    task.querySelector('button').addEventListener('click', removeTask)
+
 }
 
 const renderList = () => {
