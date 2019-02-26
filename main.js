@@ -4,7 +4,7 @@ const form = document.querySelector('form');
 const input = document.querySelector('input');
 const btn = document.querySelector('button');
 const ul = document.querySelector('ul');
-const listItems = document.getElementsByClassName('taskList');
+const listItems = document.getElementsByClassName('task');
 const numberTask = document.querySelector('h2 span');
 const searchInput = document.getElementById("searchInput")
 
@@ -25,11 +25,7 @@ const removeTask = (e) => {
     toDoList.splice(index, 1); //clean delete piece array
     numberTask.textContent = toDoList.length;
     renderList();
-}
-
-const addNewTasks = () => {
-
-
+    
 }
 
 const addTask = (e) => {

@@ -57,7 +57,7 @@ input {
 
 .task {
   position: relative;
-  background-color: #6fcc58;
+  background-color: #87dd72;
   list-style-type: none;
   padding: 10px 50px 10px 10px;
   border-radius: 5px;
@@ -66,8 +66,7 @@ input {
   overflow: hidden;
 }
 
-.btn-delete,
-.btn-add-second {
+.btn-delete {
   position: absolute;
   top: 50%;
   right: 0;
@@ -75,7 +74,7 @@ input {
   padding: 5px 0;
   background-color: transparent;
   border-style: none;
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
   color: #24b400;
   cursor: pointer;
@@ -83,18 +82,12 @@ input {
   z-index: 1;
 }
 
-.btn-add-second {
-  right: 25px;
-}
-
 .searchInput {
   display: inline-block;
   right: 20px;
 }
 
-.far,
-.fas {
-  display: block;
+.far {
   margin: 2px;
   font-size: 20px;
 }
